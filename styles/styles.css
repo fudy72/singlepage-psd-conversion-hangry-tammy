@@ -179,6 +179,7 @@ ul.icon-directory a {
     color: white;
     font-size: 1.75rem;
     text-transform: uppercase;
+    position: relative;
 }
 
 ul.icon-directory i,
@@ -217,7 +218,7 @@ footer {
     background: #eeeeee;
 }
 
-footer div.wrapper {
+footer section.wrapper {
     text-align: center;
 }
 
@@ -298,7 +299,7 @@ section.copyright {
     text-align: center;
 }
 
-/* hover and active states, starting from header */
+/* hover, active, and focus states, starting from header */
 button.hamburger:active {
     color: #e75605;
 }
@@ -318,8 +319,18 @@ ul.icon-directory li a:hover {
     color: #dbd7d7;
 }
 
-ul.icon-directory li a:active {
-    text-decoration: underline;
+ul.icon-directory a::after {
+    content: "";
+    width: 5rem;
+    height: .25rem;
+    position: absolute;
+    left: -2.5rem;
+    bottom: -5rem;
+    background-color: transparent;
+}
+
+ul.icon-directory a:active::after {
+    background-color: white;
 }
 
 ul.footer-directory a:hover,
@@ -356,6 +367,10 @@ ul.contact a:active::after {
     background-color: #e75605;
 }
 
+*:focus {
+    box-shadow: 2px 2px 2px black;
+}
+
 /* media queries */
 @media (max-width: 342px) {
     ul.footer-directory li,
@@ -381,7 +396,7 @@ ul.contact a:active::after {
 }
 
 @media (min-width: 750px) {
-    footer div.wrapper {
+    footer section.wrapper {
         padding: 3rem 0;
     }
     
@@ -462,7 +477,7 @@ ul.contact a:active::after {
         width: 80%;
     }
 
-    div.intro ul li {
+    div.intro ul a {
         font-size: 1.25rem;
         color: #e75605;
     }
@@ -559,6 +574,25 @@ ul.contact a:active::after {
         float: right;
     }
 
+    ul.icon-directory a::after {
+        content: "";
+        width: 100px;
+        height: 5px;
+        position: absolute;
+        left: -50px;
+        background-color: transparent;
+        bottom: -120px;
+    }
+
+    ul.icon-directory a.location-icon::after {
+        left: -40px;
+    }
+
+    ul.icon-directory a:active::after {
+        background-color: white;
+    }
+    
+
     /* instagram section */
     section.gram {
         padding: 5rem 0;
@@ -582,7 +616,7 @@ ul.contact a:active::after {
     }
 
     /* footer */
-    footer div.wrapper {
+    footer section.wrapper {
         padding: 1rem 0;
     }
 
