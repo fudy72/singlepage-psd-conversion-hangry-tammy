@@ -1,4 +1,4 @@
-The First Project of Many!
+# The First Project of Many!
 
 This project was the first that I completed in Juno College's Web Development Immersive Bootcamp. It is a straightforward, one page psd conversion that is sure you make you hungry ;)
 
